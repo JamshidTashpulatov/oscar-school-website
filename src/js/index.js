@@ -485,7 +485,7 @@ function horizontalLoop(items, config) {
 let audio = document.getElementById('background_audio');
 
 audio.volume = 0.1;
-auidio.play();
+audio.play();
 
 document.getElementById('mute').addEventListener('click', function (e)
 {
