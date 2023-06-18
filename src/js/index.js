@@ -100,6 +100,7 @@ gsap.from(".images__img__container", {
   transformOrigin: "center",
   ease: "none",
 });
+
 gsap.from(".video__desc", {
   scrollTrigger: {
     trigger: ".video__desc",
@@ -109,6 +110,15 @@ gsap.from(".video__desc", {
   opacity: 0,
   transformOrigin: "center",
   ease: "none",
+});
+
+gsap.from(".social__item__footer", {
+  scrollTrigger: {
+    trigger: ".social__item__footer",
+    // markers: true,
+  },
+  opacity: 0,
+  duration: 1.4,
 });
 
 function animateFrom(elem, direction) {
@@ -203,21 +213,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }, // assure that the element is hidden when scrolled into view
     });
   });
-  gsap.utils.toArray(".social__item__footer").forEach(function (elem) {
-    hide(elem);
-    ScrollTrigger.create({
-      trigger: elem,
-      onEnter: function () {
-        animateFrom(elem);
-      },
-      onEnterBack: function () {
-        animateFrom(elem, -1);
-      },
-      onLeave: function () {
-        hide(elem);
-      }, // assure that the element is hidden when scrolled into view
-    });
-  });
+
   gsap.utils.toArray(".footer__bottom p").forEach(function (elem) {
     hide(elem);
     ScrollTrigger.create({

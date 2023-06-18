@@ -665,6 +665,13 @@ document.querySelector(".menu-close").addEventListener("click", ()=>{
     transformOrigin: "center",
     ease: "none"
 });
+(0, _gsap.gsap).from(".social__item__footer", {
+    scrollTrigger: {
+        trigger: ".social__item__footer"
+    },
+    opacity: 0,
+    duration: 1.4
+});
 function animateFrom(elem, direction) {
     direction = direction || 1;
     var x = 0, y = direction * 100;
@@ -740,21 +747,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
     (0, _gsap.gsap).utils.toArray(".mail__wrapper a").forEach(function(elem) {
-        hide(elem);
-        (0, _scrollTrigger.ScrollTrigger).create({
-            trigger: elem,
-            onEnter: function() {
-                animateFrom(elem);
-            },
-            onEnterBack: function() {
-                animateFrom(elem, -1);
-            },
-            onLeave: function() {
-                hide(elem);
-            }
-        });
-    });
-    (0, _gsap.gsap).utils.toArray(".social__item__footer").forEach(function(elem) {
         hide(elem);
         (0, _scrollTrigger.ScrollTrigger).create({
             trigger: elem,
